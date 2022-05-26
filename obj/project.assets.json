@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/guilhermo/Documentos/projetos/corridaSO/corridaSO.csproj",
+      "projectUniqueName": "/home/guilhermo/Documentos/projetos/Race/corridaSO.csproj",
       "projectName": "corridaSO",
-      "projectPath": "/home/guilhermo/Documentos/projetos/corridaSO/corridaSO.csproj",
+      "projectPath": "/home/guilhermo/Documentos/projetos/Race/corridaSO.csproj",
       "packagesPath": "/home/guilhermo/.nuget/packages/",
-      "outputPath": "/home/guilhermo/Documentos/projetos/corridaSO/obj/",
+      "outputPath": "/home/guilhermo/Documentos/projetos/Race/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/home/guilhermo/.nuget/NuGet/NuGet.Config"

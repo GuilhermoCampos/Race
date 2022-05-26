@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Threading;
 using System.Threading.Tasks;
+using System.Media;
 
 namespace corridaSO{
     internal class Program{
         public static class Position{
+            static int rythm= 0;
             static int track = 0;
             static int maxspeed = 0;
             static int minspeed = 0;
@@ -20,10 +22,11 @@ namespace corridaSO{
 
             public static int Maxspeed{ get; set;}
             public static int Minspeed{ get; set;}
-            public static int Track{ get; set;}
             public static int Winner{ get; set;}
             public static int Second{ get; set;}
+            public static int Track{ get; set;}
             public static int Third{ get; set;}
+            public static int Rythm{ get; set;}
             public static int Car1{ get; set;}
             public static int Car2{ get; set;}
             public static int Car3{ get; set;}
@@ -33,11 +36,15 @@ namespace corridaSO{
         }
 
         static void car1(){
+            int distance = 0;
             Thread.Sleep(3000);
             Random num = new Random();
             int interval = num.Next(Position.Maxspeed,Position.Minspeed);
             while(Position.Car1 < Position.Track){
-                interval = num.Next(Position.Maxspeed,Position.Minspeed);
+                if(distance == Position.Rythm){
+                    interval = num.Next(Position.Maxspeed,Position.Minspeed);
+                    distance = 0;
+                }
                 Position.Car1 += 1;
                 Thread.Sleep(interval);
             }
@@ -53,11 +60,15 @@ namespace corridaSO{
         }
 
         static void car2(){
+            int distance = 0;
             Thread.Sleep(3000);
             Random num = new Random();
             int interval = num.Next(Position.Maxspeed,Position.Minspeed);
             while(Position.Car2 < Position.Track){
-                interval = num.Next(Position.Maxspeed,Position.Minspeed);
+                if(distance == Position.Rythm){
+                    interval = num.Next(Position.Maxspeed,Position.Minspeed);
+                    distance = 0;
+                }
                 Position.Car2 += 1;
                 Thread.Sleep(interval);
             }
@@ -72,11 +83,15 @@ namespace corridaSO{
             }
         }
         static void car3(){
+            int distance = 0;
             Thread.Sleep(3000);
             Random num = new Random();
             int interval = num.Next(Position.Maxspeed,Position.Minspeed);
             while(Position.Car3 < Position.Track){
-                interval = num.Next(Position.Maxspeed,Position.Minspeed);
+                if(distance == Position.Rythm){
+                    interval = num.Next(Position.Maxspeed,Position.Minspeed);
+                    distance = 0;
+                }
                 Position.Car3 += 1;
                 Thread.Sleep(interval);
             }
@@ -91,11 +106,15 @@ namespace corridaSO{
             }
         }
         static void car4(){
+            int distance = 0;
             Thread.Sleep(3000);
             Random num = new Random();
             int interval = num.Next(Position.Maxspeed,Position.Minspeed);
             while(Position.Car4 < Position.Track){
-                interval = num.Next(Position.Maxspeed,Position.Minspeed);
+                if(distance == Position.Rythm){
+                    interval = num.Next(Position.Maxspeed,Position.Minspeed);
+                    distance = 0;
+                }
                 Position.Car4 += 1;
                 Thread.Sleep(interval);
             }
@@ -110,11 +129,15 @@ namespace corridaSO{
             }
         }
         static void car5(){
+            int distance = 0;
             Thread.Sleep(3000);
             Random num = new Random();
             int interval = num.Next(Position.Maxspeed,Position.Minspeed);
             while(Position.Car5 < Position.Track){
-                interval = num.Next(Position.Maxspeed,Position.Minspeed);
+                if(distance == Position.Rythm){
+                    interval = num.Next(Position.Maxspeed,Position.Minspeed);
+                    distance = 0;
+                }
                 Position.Car5 += 1;
                 Thread.Sleep(interval);
             }
@@ -128,45 +151,109 @@ namespace corridaSO{
                 Position.Second = 11;
             }
         }
-        
+
         static void Main(string[] args){
+            // try{
+            //     System.Media.SoundPlayer player = new System.Media.SoundPlayer(@"./TopGear1.mp3");
+            //     player.Play();
+            // }
+            // catch(Exception ex){
+
+            // }
             Console.Clear();
-            Console.WriteLine(@"
- _____ ______   ________  ___  __    _______            ___    ___ ________  ___  ___  ________          ________  _______  _________   
-|\   _ \  _   \|\   __  \|\  \|\  \ |\  ___ \          |\  \  /  /|\   __  \|\  \|\  \|\   __  \        |\   __  \|\  ___ \|\___   ___\ 
-\ \  \\\__\ \  \ \  \|\  \ \  \/  /|\ \   __/|         \ \  \/  / | \  \|\  \ \  \\\  \ \  \|\  \       \ \  \|\ /\ \   __/\|___ \  \_| 
- \ \  \\|__| \  \ \   __  \ \   ___  \ \  \_|/__        \ \    / / \ \  \\\  \ \  \\\  \ \   _  _\       \ \   __  \ \  \_|/__  \ \  \  
-  \ \  \    \ \  \ \  \ \  \ \  \\ \  \ \  \_|\ \        \/  /  /   \ \  \\\  \ \  \\\  \ \  \\  \|       \ \  \|\  \ \  \_|\ \  \ \  \ 
-   \ \__\    \ \__\ \__\ \__\ \__\\ \__\ \_______\     __/  / /      \ \_______\ \_______\ \__\\ _\        \ \_______\ \_______\  \ \__\
-    \|__|     \|__|\|__|\|__|\|__| \|__|\|_______|    |\___/ /        \|_______|\|_______|\|__|\|__|        \|_______|\|_______|   \|__|
-                                                      \|___|/                                                                           
- 
-  ________  ___  ___  ________  ________  ________  _______            ___    ___ ________  ___  ___  ________          ________  ________  ________     
-|\   ____\|\  \|\  \|\   __  \|\   __  \|\   ____\|\  ___ \          |\  \  /  /|\   __  \|\  \|\  \|\   __  \        |\   ____\|\   __  \|\   __  \    
-\ \  \___|\ \  \\\  \ \  \|\  \ \  \|\  \ \  \___|\ \   __/|         \ \  \/  / | \  \|\  \ \  \\\  \ \  \|\  \       \ \  \___|\ \  \|\  \ \  \|\  \   
- \ \  \    \ \   __  \ \  \\\  \ \  \\\  \ \_____  \ \  \_|/__        \ \    / / \ \  \\\  \ \  \\\  \ \   _  _\       \ \  \    \ \   __  \ \   _  _\  
-  \ \  \____\ \  \ \  \ \  \\\  \ \  \\\  \|____|\  \ \  \_|\ \        \/  /  /   \ \  \\\  \ \  \\\  \ \  \\  \|       \ \  \____\ \  \ \  \ \  \\  \| 
-   \ \_______\ \__\ \__\ \_______\ \_______\____\_\  \ \_______\     __/  / /      \ \_______\ \_______\ \__\\ _\        \ \_______\ \__\ \__\ \__\\ _\ 
-    \|_______|\|__|\|__|\|_______|\|_______|\_________\|_______|    |\___/ /        \|_______|\|_______|\|__|\|__|        \|_______|\|__|\|__|\|__|\|__|
-                                           \|_________|             \|___|/                                                                             
-   
-
-
-
-
-   _    _                _    _                _    _                _    _                _    _           
-  \`../ |o_..__         \`../ |o_..__         \`../ |o_..__         \`../ |o_..__        \`../ |o_..__        
-`.,(_)______(_).>     `.,(_)______(_).>     `.,(_)______(_).>     `.,(_)______(_).>     `.,(_)______(_).>     
-  _____  _____          ____   ______         ______ ____           ______ ______        ____   ____   
- |  |  ||  |  |        |_   | |    __|       |      |_   |         |    __|__    |      |_   | |_   |  
- |__    |__    |        _|  |_|  __  |       |  --  |_|  |_        |  __  |__    |       _|  |_ _|  |_ 
-    |__|   |__|        |______|______|       |______|______|       |______|______|      |______|______|  
-            ");
+            Console.WriteLine(@"╔═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╗
+║                                                                                                                     ║
+║                                                                                                                     ║
+║                                                                                                                     ║
+║                              ::::::::::::::    :::::::::::: ::::::::::    :::    :::::::::                          ║
+║                                 :+:    :+:    :+::+:    :+::+:         :+: :+:  :+:    :+:                          ║
+║                                +:+    +:+    +:++:+    +:++:+        +:+   +:+ +:+    +:+                           ║
+║                               +#+    +#++:++#+++#++:++#: +#++:++#  +#++:++#++:+#+    +:+                            ║
+║                              +#+    +#+    +#++#+    +#++#+       +#+     +#++#+    +#+                             ║
+║                             #+#    #+#    #+##+#    #+##+#       #+#     #+##+#    #+#                              ║
+║                            ###    ###    ######    ################     ############                                ║
+║                                                                                                                     ║
+║                                  :::::::: :::    :::    :::     :::::::: :::::::::::::::::::                        ║
+║                                 :+:    :+::+:    :+:  :+: :+:  :+:    :+::+:       :+:    :+:                       ║
+║                                +:+       +:+    +:+ +:+   +:+ +:+       +:+       +:+    +:+                        ║
+║                               +#+       +#++:++#+++#++:++#++:+#++:++#+++#++:++#  +#++:++#:                          ║
+║                              +#+       +#+    +#++#+     +#+       +#++#+       +#+    +#+                          ║
+║                             #+#    #+##+#    #+##+#     #+##+#    #+##+#       #+#    #+#                           ║
+║                            ######## ###    ######     ### ######## #############    ###                             ║
+║                                                                                                                     ║
+║                                                                                                                     ║
+║                                                                                                                     ║
+║                                                                                                                     ║
+╠═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╣
+║                                                                                                                     ║
+║                                                                                                                     ║
+║                                                 PRESS ENTER TO START                                                ║
+║                                                                                                                     ║
+║                                                                                                                     ║
+╚═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╝");
+            Console.ReadKey();
             int bet = 0;
-            Console.Write("Witch you will choose?:");
-            bet = int.Parse(Console.ReadLine());
+            while(true){
+            Console.Clear();
+            Console.WriteLine(@"╔═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╗
+║                                                                                                                     ║
+║                                                                                                                     ║
+║                                                                                                                     ║
+║             _____ _    _  ____   ____   _____ ______  __     ______  _    _ _____     _____          _____          ║
+║            / ____| |  | |/ __ \ / __ \ / ____|  ____| \ \   / / __ \| |  | |  __ \   / ____|   /\   |  __ \         ║
+║           | |    | |__| | |  | | |  | | (___ | |__     \ \_/ / |  | | |  | | |__) | | |       /  \  | |__) |        ║
+║           | |    |  __  | |  | | |  | |\___ \|  __|     \   /| |  | | |  | |  _  /  | |      / /\ \ |  _  /         ║
+║           | |____| |  | | |__| | |__| |____) | |____     | | | |__| | |__| | | \ \  | |____ / ____ \| | \ \         ║
+║            \_____|_|  |_|\____/ \____/|_____/|______|    |_|  \____/ \____/|_|  \_\  \_____/_/    \_\_|  \_\        ║
+║                                                                                                                     ║
+║                                                                                                                     ║
+║                                                                                                                     ║
+║                                                                                                                     ║
+║                                                                                                                     ║
+║           _    _                _    _                _    _                _    _                _    _            ║
+║       \`../ |o_..__         \`../ |o_..__         \`../ |o_..__         \`../ |o_..__        \`../ |o_..__          ║
+║       `.,(_)______(_).>     `.,(_)______(_).>     `.,(_)______(_).>     `.,(_)______(_).>     `.,(_)______(_).>     ║
+║          _____  _____          ____   ______         ______ ____           ______ ______        ____   ____         ║
+║         |  |  ||  |  |        |_   | |    __|       |      |_   |         |    __|__    |      |_   | |_   |        ║
+║         |__    |__    |        _|  |_|  __  |       |  --  |_|  |_        |  __  |__    |       _|  |_ _|  |_       ║
+║            |__|   |__|        |______|______|       |______|______|       |______|______|      |______|______|      ║
+║                                                                                                                     ║
+║                                                                                                                     ║
+║                                                                                                                     ║
+║                                                                                                                     ║
+║                                                                                                                     ║
+║                                                                                                                     ║
+╚═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╝");
+                Console.Write("Witch you will choose?:");
+                try{
+                    bet = int.Parse(Console.ReadLine());
+                }
+                catch(Exception ex){
+                    
+                }
+                if(bet == 44){
+                    break;
+                }
+                else if(bet == 16){
+                    break;
+                }
+                else if(bet == 1){
+                    break;
+                }
+                else if(bet == 63){
+                    break;
+                }
+                else if(bet == 11){
+                    break;
+                }
+                Console.WriteLine("Choose a Valid number!, come on try again!");
+                Thread.Sleep(5000);
+                continue;
+            }
 
-            Position.Track = 150;
+
+            Position.Track = 81;
+            Position.Rythm = 0;
             Position.Maxspeed = 50;
             Position.Minspeed = 150;
             int tam = -1*(Position.Track + 15);
@@ -197,6 +284,7 @@ namespace corridaSO{
             string space54 = "";
             string space6 = "";
 
+            string city0 = "╔═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╗";
             string city1 = "                                                 ..======.                                                               ..======.                                                               ..======.                                                               ..======.               ";
             string city2 = "                                                 ||::: : |                                                               ||::: : |                                                               ||::: : |                                                               ||::: : |               ";
             string city3 = "    .====.                                  .~.===: : : :|   ..===.         .====.                                  .~.===: : : :|   ..===.         .====.                                  .~.===: : : :|   ..===.         .====.                                  .~.===: : : :|   ..===.      ";
@@ -209,26 +297,26 @@ namespace corridaSO{
             string city10 = "_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _";
             string city11 = "_________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________";
 
-            string winner1 = @" _____  _____  
-|  |  ||  |  | 
-|__    |__    |
-   |__|   |__| ";
-        string winner2 = @" ____   ______ 
-|_   | |    __|
- _|  |_|  __  |
-|______|______|";
-        string winner3 = @" ______ ____   
-|      |_   |  
-|  --  |_|  |_ 
-|______|______|";
-        string winner4 = @" ______ ______ 
-|    __|__    |
-|  __  |__    |
-|______|______|";
-        string winner5 = @" ____   ____   
-|_   | |_   |  
- _|  |_ _|  |_ 
-|______|______|";
+            string winner1 = @"║                                                    _____  _____                                                     ║ 
+║                                                   |  |  ||  |  |                                                    ║
+║                                                   |__    |__    |                                                   ║
+║                                                      |__|   |__|                                                    ║";
+            string winner2 = @"║                                                    ____   ______                                                    ║ 
+║                                                   |_   | |    __|                                                   ║
+║                                                    _|  |_|  __  |                                                   ║
+║                                                   |______|______|                                                   ║";
+            string winner3 = @"║                                                    ______ ____                                                      ║  
+║                                                   |      |_   |                                                     ║
+║                                                   |  --  |_|  |_                                                    ║
+║                                                   |______|______|                                                   ║";
+            string winner4 = @"║                                                    ______ ______                                                    ║
+║                                                   |    __|__    |                                                   ║
+║                                                   |  __  |__    |                                                   ║
+║                                                   |______|______|                                                   ║";
+            string winner5 = @"║                                                    ____   ____                                                      ║  
+║                                                   |_   | |_   |                                                     ║
+║                                                    _|  |_ _|  |_                                                    ║
+║                                                   |______|______|                                                   ║";
             
             
             Car1.Start();
@@ -247,92 +335,97 @@ namespace corridaSO{
                 space5 = String.Concat(Enumerable.Repeat(" ", Position.Car5));
                 space6 = String.Concat(Enumerable.Repeat(" ", Position.Car6));
 
-                Console.WriteLine(city1.Substring(0, (Position.Track + 35)));
-                Console.WriteLine(city2.Substring(0, (Position.Track + 35)));
-                Console.WriteLine(city3.Substring(0, (Position.Track + 35)));
-                Console.WriteLine(city4.Substring(0, (Position.Track + 35)));
-                Console.WriteLine(city5.Substring(0, (Position.Track + 35)));
-                Console.WriteLine(city6.Substring(0, (Position.Track + 35)));
-                Console.WriteLine(city7.Substring(0, (Position.Track + 35)));
-                Console.WriteLine(city8.Substring(0, (Position.Track + 35)));
-                Console.WriteLine($"{city9.Substring(0, (Position.Track + 35))}");
+                Console.WriteLine(city0);
+                Console.WriteLine($"║{city1.Substring(0, (Position.Track + 36))}║");
+                Console.WriteLine($"║{city2.Substring(0, (Position.Track + 36))}║");
+                Console.WriteLine($"║{city3.Substring(0, (Position.Track + 36))}║");
+                Console.WriteLine($"║{city4.Substring(0, (Position.Track + 36))}║");
+                Console.WriteLine($"║{city5.Substring(0, (Position.Track + 36))}║");
+                Console.WriteLine($"║{city6.Substring(0, (Position.Track + 36))}║");
+                Console.WriteLine($"║{city7.Substring(0, (Position.Track + 36))}║");
+                Console.WriteLine($"║{city8.Substring(0, (Position.Track + 36))}║");
+                Console.WriteLine($"║{city9.Substring(0, (Position.Track + 36))}║");
 
 
                 space12 = String.Concat(space1, "  \\`./44|o_..__  ");
                 space13 = String.Concat(space1, "`.,(_)______(_).>");
-                space14 = String.Concat(space1, "                 ");
                 space1 = String.Concat(space1, "    _    _       ");
                 
                 space22 = String.Concat(space2, "  \\`./16|o_..__  ");
                 space23 = String.Concat(space2, "`.,(_)______(_).>");
-                space24 = String.Concat(space2, "                 ");
                 space2 = String.Concat(space2, "    _    _       ");
                 
                 space32 = String.Concat(space3, "  \\`./01|o_..__  ");
                 space33 = String.Concat(space3, "`.,(_)______(_).>");
-                space34 = String.Concat(space3, "                 ");
                 space3 = String.Concat(space3, "    _    _       ");
                 
 
                 space42 = String.Concat(space4, "  \\`./63|o_..__  ");
                 space43 = String.Concat(space4, "`.,(_)______(_).>");
-                space44 = String.Concat(space4, "                 ");
                 space4 = String.Concat(space4, "    _    _       ");
 
                 space52 = String.Concat(space5, "  \\`./11|o_..__  ");
                 space53 = String.Concat(space5, "`.,(_)______(_).>");
-                space54 = String.Concat(space5, "                 ");
                 space5 = String.Concat(space5, "    _    _       ");
 
                 
 
-                Console.WriteLine($"{space1,-167}░░░ _____  _____  ");
-                Console.WriteLine($"{space12,-167}░░░|  |  ||  |  | ");
-                Console.WriteLine($"{space13,-167}░░░|__    |__    |");
-                Console.WriteLine($"{space14,-167}░░░   |__|   |__| ");
+                Console.WriteLine($"║{space1,-99}░░░|  |  ||  |  | ║");
+                Console.WriteLine($"║{space12,-99}░░░|__    |__    |║");
+                Console.WriteLine($"║{space13,-99}░░░   |__|   |__| ║");
 
-                Console.WriteLine($"{city10.Substring(0, (Position.Track + 17))}░░░");
+                Console.WriteLine($"║{city10.Substring(0, (Position.Track + 18))}░░░ ____   ______ ║");
 
-                Console.WriteLine($"{space2,-167}░░░ ____   ______ ");
-                Console.WriteLine($"{space22,-167}░░░|_   | |    __|");
-                Console.WriteLine($"{space23,-167}░░░ _|  |_|  __  |");
-                Console.WriteLine($"{space24,-167}░░░|______|______|");
+                Console.WriteLine($"║{space2,-99}░░░|_   | |    __|║");
+                Console.WriteLine($"║{space22,-99}░░░ _|  |_|  __  |║");
+                Console.WriteLine($"║{space23,-99}░░░|______|______|║");
 
-                Console.WriteLine($"{city10.Substring(0, (Position.Track + 17))}░░░");
+                Console.WriteLine($"║{city10.Substring(0, (Position.Track + 18))}░░░ ______ ____   ║");
 
-                Console.WriteLine($"{space3,-167}░░░ ______ ____   ");
-                Console.WriteLine($"{space32,-167}░░░|      |_   |  ");
-                Console.WriteLine($"{space33,-167}░░░|  --  |_|  |_ ");
-                Console.WriteLine($"{space34,-167}░░░|______|______|");
+                Console.WriteLine($"║{space3,-99}░░░|      |_   |  ║");
+                Console.WriteLine($"║{space32,-99}░░░|  --  |_|  |_ ║");
+                Console.WriteLine($"║{space33,-99}░░░|______|______|║");
 
-                Console.WriteLine($"{city10.Substring(0, (Position.Track + 17))}░░░");
+                Console.WriteLine($"║{city10.Substring(0, (Position.Track + 18))}░░░ ______ ______ ║");
 
-                Console.WriteLine($"{space4,-167}░░░ ______ ______ ");
-                Console.WriteLine($"{space42,-167}░░░|    __|__    |");
-                Console.WriteLine($"{space43,-167}░░░|  __  |__    |");
-                Console.WriteLine($"{space44,-167}░░░|______|______|");
+                Console.WriteLine($"║{space4,-99}░░░|    __|__    |║");
+                Console.WriteLine($"║{space42,-99}░░░|  __  |__    |║");
+                Console.WriteLine($"║{space43,-99}░░░|______|______|║");
 
-                Console.WriteLine($"{city10.Substring(0, (Position.Track + 17))}░░░");
+                Console.WriteLine($"║{city10.Substring(0, (Position.Track + 18))}░░░ ____   ____   ║");
 
-                Console.WriteLine($"{space5,-167}░░░ ____   ____   ");
-                Console.WriteLine($"{space52,-167}░░░|_   | |_   |  ");
-                Console.WriteLine($"{space53,-167}░░░ _|  |_ _|  |_ ");
-                Console.WriteLine($"{space54,-167}░░░|______|______|");
+                Console.WriteLine($"║{space5,-99}░░░|_   | |_   |  ║");
+                Console.WriteLine($"║{space52,-99}░░░ _|  |_ _|  |_ ║");
+                Console.WriteLine($"║{space53,-99}░░░|______|______|║");
 
-                Console.WriteLine(city9.Substring(0, (Position.Track + 18)));
-                Console.WriteLine(city11.Substring(0, (Position.Track + 18)));
+                Console.WriteLine("╚═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╝");
 
                 Thread.Sleep(60);
             }
             Console.Clear();
-            Console.WriteLine(@" _________  ___  ___  _______           ___       __   ___  ________   ________   _______   ________          ___  ________      
-|\___   ___\\  \|\  \|\  ___ \         |\  \     |\  \|\  \|\   ___  \|\   ___  \|\  ___ \ |\   __  \        |\  \|\   ____\     
-\|___ \  \_\ \  \\\  \ \   __/|        \ \  \    \ \  \ \  \ \  \\ \  \ \  \\ \  \ \   __/|\ \  \|\  \       \ \  \ \  \___|_    
-     \ \  \ \ \   __  \ \  \_|/__       \ \  \  __\ \  \ \  \ \  \\ \  \ \  \\ \  \ \  \_|/_\ \   _  _\       \ \  \ \_____  \   
-      \ \  \ \ \  \ \  \ \  \_|\ \       \ \  \|\__\_\  \ \  \ \  \\ \  \ \  \\ \  \ \  \_|\ \ \  \\  \|       \ \  \|____|\  \  
-       \ \__\ \ \__\ \__\ \_______\       \ \____________\ \__\ \__\\ \__\ \__\\ \__\ \_______\ \__\\ _\        \ \__\____\_\  \ 
-        \|__|  \|__|\|__|\|_______|        \|____________|\|__|\|__| \|__|\|__| \|__|\|_______|\|__|\|__|        \|__|\_________\
-                                                                                                                     \|_________|");
+            // Console.WriteLine(city0);
+            if(bet == Position.Winner){
+                Console.WriteLine(@"║                               __     ______  _    _     __          _______ _   _                                   ║
+║                               \ \   / / __ \| |  | |    \ \        / /_   _| \ | |                                  ║
+║                                \ \_/ / |  | | |  | |     \ \  /\  / /  | | |  \| |                                  ║
+║                                 \   /| |  | | |  | |      \ \/  \/ /   | | | . ` |                                  ║
+║                                  | | | |__| | |__| |       \  /\  /   _| |_| |\  |                                  ║
+║                                  |_|  \____/ \____/         \/  \/   |_____|_| \_|                                  ║");
+            }
+            else{
+                Console.WriteLine(@"║                               __     ______  _    _      _      ____   _____ _______                                ║ 
+║                               \ \   / / __ \| |  | |    | |    / __ \ / ____|__   __|                               ║
+║                                \ \_/ / |  | | |  | |    | |   | |  | | (___    | |                                  ║
+║                                 \   /| |  | | |  | |    | |   | |  | |\___ \   | |                                  ║
+║                                  | | | |__| | |__| |    | |___| |__| |____) |  | |                                  ║
+║                                  |_|  \____/ \____/     |______\____/|_____/   |_|                                  ║");
+            }
+            Console.WriteLine(@"║                            _______ _    _ ______   ______ _____ _____   _____ _______                               ║
+║                           |__   __| |  | |  ____| |  ____|_   _|  __ \ / ____|__   __|                              ║
+║                              | |  | |__| | |__    | |__    | | | |__) | (___    | |                                 ║
+║                              | |  |  __  |  __|   |  __|   | | |  _  / \___ \   | |                                 ║
+║                              | |  | |  | | |____  | |     _| |_| | \ \ ____) |  | |                                 ║
+║                              |_|  |_|  |_|______| |_|    |_____|_|  \_\_____/   |_|                                 ║");
             
             switch(Position.Winner){
                 case 44:
@@ -352,14 +445,9 @@ namespace corridaSO{
                     break;
             }
 
-            Console.WriteLine(@" _________  ___  ___  _______           ________  _______   ________  ________  ________   ________          ___  ________      
-|\___   ___\\  \|\  \|\  ___ \         |\   ____\|\  ___ \ |\   ____\|\   __  \|\   ___  \|\   ___ \        |\  \|\   ____\     
-\|___ \  \_\ \  \\\  \ \   __/|        \ \  \___|\ \   __/|\ \  \___|\ \  \|\  \ \  \\ \  \ \  \_|\ \       \ \  \ \  \___|_    
-     \ \  \ \ \   __  \ \  \_|/__       \ \_____  \ \  \_|/_\ \  \    \ \  \\\  \ \  \\ \  \ \  \ \\ \       \ \  \ \_____  \   
-      \ \  \ \ \  \ \  \ \  \_|\ \       \|____|\  \ \  \_|\ \ \  \____\ \  \\\  \ \  \\ \  \ \  \_\\ \       \ \  \|____|\  \  
-       \ \__\ \ \__\ \__\ \_______\        ____\_\  \ \_______\ \_______\ \_______\ \__\\ \__\ \_______\       \ \__\____\_\  \ 
-        \|__|  \|__|\|__|\|_______|       |\_________\|_______|\|_______|\|_______|\|__| \|__|\|_______|        \|__|\_________\
-                                          \|_________|                                                              \|_________|");
+            Console.WriteLine(@"║                                             ___   _  __ _ _ _      _                                                ║
+║                                              ||_||_ (_ |_/ / \|\ || \                                               ║
+║                                              || ||_ __)|_\_\_/| \||_/                                               ║");
 
             switch(Position.Second){
                 case 44:
@@ -379,14 +467,9 @@ namespace corridaSO{
                     break;
             }
 
-            Console.WriteLine(@" _________  ___  ___  _______           ___       ________  _________  _______           ___  ________      
-|\___   ___\\  \|\  \|\  ___ \         |\  \     |\   __  \|\___   ___\\  ___ \         |\  \|\   ____\     
-\|___ \  \_\ \  \\\  \ \   __/|        \ \  \    \ \  \|\  \|___ \  \_\ \   __/|        \ \  \ \  \___|_    
-     \ \  \ \ \   __  \ \  \_|/__       \ \  \    \ \   __  \   \ \  \ \ \  \_|/__       \ \  \ \_____  \   
-      \ \  \ \ \  \ \  \ \  \_|\ \       \ \  \____\ \  \ \  \   \ \  \ \ \  \_|\ \       \ \  \|____|\  \  
-       \ \__\ \ \__\ \__\ \_______\       \ \_______\ \__\ \__\   \ \__\ \ \_______\       \ \__\____\_\  \ 
-        \|__|  \|__|\|__|\|_______|        \|_______|\|__|\|__|    \|__|  \|_______|        \|__|\_________\
-                                                                                                \|_________|");
+            Console.WriteLine(@"║                                              ___   _ ___  ___ _  _                                                  ║
+║                                               ||_||_  ||_| | |_)| \                                                 ║
+║                                               || ||_  || |_|_| \|_/                                                 ║");
 
             switch(Position.Third){
                 case 44:
@@ -405,34 +488,8 @@ namespace corridaSO{
                     Console.WriteLine(winner5);
                     break;
             }
-
-            Console.WriteLine(@" ___  ________            ___    ___ ________  ___  ___  ________          ________  _______  _________         ___    ___ ________  ___  ___     
-|\  \|\   ___  \         |\  \  /  /|\   __  \|\  \|\  \|\   __  \        |\   __  \|\  ___ \|\___   ___\      |\  \  /  /|\   __  \|\  \|\  \    
-\ \  \ \  \\ \  \        \ \  \/  / | \  \|\  \ \  \\\  \ \  \|\  \       \ \  \|\ /\ \   __/\|___ \  \_|      \ \  \/  / | \  \|\  \ \  \\\  \   
- \ \  \ \  \\ \  \        \ \    / / \ \  \\\  \ \  \\\  \ \   _  _\       \ \   __  \ \  \_|/__  \ \  \        \ \    / / \ \  \\\  \ \  \\\  \  
-  \ \  \ \  \\ \  \        \/  /  /   \ \  \\\  \ \  \\\  \ \  \\  \|       \ \  \|\  \ \  \_|\ \  \ \  \        \/  /  /   \ \  \\\  \ \  \\\  \ 
-   \ \__\ \__\\ \__\     __/  / /      \ \_______\ \_______\ \__\\ _\        \ \_______\ \_______\  \ \__\     __/  / /      \ \_______\ \_______\
-    \|__|\|__| \|__|    |\___/ /        \|_______|\|_______|\|__|\|__|        \|_______|\|_______|   \|__|    |\___/ /        \|_______|\|_______|
-                        \|___|/                                                                               \|___|/                             ");
-            if(bet == Position.Winner){
-                Console.WriteLine(@" ___       __   ___  ________           ________   ________  _________  ___  ___  ___  ________   ________     
-|\  \     |\  \|\  \|\   ___  \        |\   ___  \|\   __  \|\___   ___\\  \|\  \|\  \|\   ___  \|\   ____\    
-\ \  \    \ \  \ \  \ \  \\ \  \       \ \  \\ \  \ \  \|\  \|___ \  \_\ \  \\\  \ \  \ \  \\ \  \ \  \___|    
- \ \  \  __\ \  \ \  \ \  \\ \  \       \ \  \\ \  \ \  \\\  \   \ \  \ \ \   __  \ \  \ \  \\ \  \ \  \  ___  
-  \ \  \|\__\_\  \ \  \ \  \\ \  \       \ \  \\ \  \ \  \\\  \   \ \  \ \ \  \ \  \ \  \ \  \\ \  \ \  \|\  \ 
-   \ \____________\ \__\ \__\\ \__\       \ \__\\ \__\ \_______\   \ \__\ \ \__\ \__\ \__\ \__\\ \__\ \_______\
-    \|____________|\|__|\|__| \|__|        \|__| \|__|\|_______|    \|__|  \|__|\|__|\|__|\|__| \|__|\|_______|");
-            }
-            else{
-                Console.WriteLine(@" ___       ________  ________  _________         ___    ___ ________  ___  ___  ________          ___  ___  ________  ___  ___  ________  _______      
-|\  \     |\   __  \|\   ____\|\___   ___\      |\  \  /  /|\   __  \|\  \|\  \|\   __  \        |\  \|\  \|\   __  \|\  \|\  \|\   ____\|\  ___ \     
-\ \  \    \ \  \|\  \ \  \___|\|___ \  \_|      \ \  \/  / | \  \|\  \ \  \\\  \ \  \|\  \       \ \  \\\  \ \  \|\  \ \  \\\  \ \  \___|\ \   __/|    
- \ \  \    \ \  \\\  \ \_____  \   \ \  \        \ \    / / \ \  \\\  \ \  \\\  \ \   _  _\       \ \   __  \ \  \\\  \ \  \\\  \ \_____  \ \  \_|/__  
-  \ \  \____\ \  \\\  \|____|\  \   \ \  \        \/  /  /   \ \  \\\  \ \  \\\  \ \  \\  \|       \ \  \ \  \ \  \\\  \ \  \\\  \|____|\  \ \  \_|\ \ 
-   \ \_______\ \_______\____\_\  \   \ \__\     __/  / /      \ \_______\ \_______\ \__\\ _\        \ \__\ \__\ \_______\ \_______\____\_\  \ \_______\
-    \|_______|\|_______|\_________\   \|__|    |\___/ /        \|_______|\|_______|\|__|\|__|        \|__|\|__|\|_______|\|_______|\_________\|_______|
-                       \|_________|            \|___|/                                                                            \|_________|         ");
-            }
+            // Console.WriteLine("╚═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╝");
+            Console.ReadKey();
         }
     }
 
