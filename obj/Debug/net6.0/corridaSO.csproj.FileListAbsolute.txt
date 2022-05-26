@@ -1,0 +1,15 @@
+/home/guilhermo/Documentos/projetos/corridaSO/obj/Debug/net6.0/corridaSO.csproj.AssemblyReference.cache
+/home/guilhermo/Documentos/projetos/corridaSO/obj/Debug/net6.0/corridaSO.GeneratedMSBuildEditorConfig.editorconfig
+/home/guilhermo/Documentos/projetos/corridaSO/obj/Debug/net6.0/corridaSO.AssemblyInfoInputs.cache
+/home/guilhermo/Documentos/projetos/corridaSO/obj/Debug/net6.0/corridaSO.AssemblyInfo.cs
+/home/guilhermo/Documentos/projetos/corridaSO/obj/Debug/net6.0/corridaSO.csproj.CoreCompileInputs.cache
+/home/guilhermo/Documentos/projetos/corridaSO/bin/Debug/net6.0/corridaSO
+/home/guilhermo/Documentos/projetos/corridaSO/bin/Debug/net6.0/corridaSO.deps.json
+/home/guilhermo/Documentos/projetos/corridaSO/bin/Debug/net6.0/corridaSO.runtimeconfig.json
+/home/guilhermo/Documentos/projetos/corridaSO/bin/Debug/net6.0/corridaSO.dll
+/home/guilhermo/Documentos/projetos/corridaSO/bin/Debug/net6.0/corridaSO.pdb
+/home/guilhermo/Documentos/projetos/corridaSO/obj/Debug/net6.0/corridaSO.dll
+/home/guilhermo/Documentos/projetos/corridaSO/obj/Debug/net6.0/refint/corridaSO.dll
+/home/guilhermo/Documentos/projetos/corridaSO/obj/Debug/net6.0/corridaSO.pdb
+/home/guilhermo/Documentos/projetos/corridaSO/obj/Debug/net6.0/corridaSO.genruntimeconfig.cache
+/home/guilhermo/Documentos/projetos/corridaSO/obj/Debug/net6.0/ref/corridaSO.dll
