@@ -160,6 +160,7 @@ namespace corridaSO{
             // catch(Exception ex){
 
             // }
+            Console.ForegroundColor = ConsoleColor.Green;
             Console.Clear();
             Console.WriteLine(@"╔═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╗
 ║                                                                                                                     ║
@@ -183,7 +184,7 @@ namespace corridaSO{
 ║                                                                                                                     ║
 ║                                                                                                                     ║
 ║                                                                                                                     ║
-║                                                                                                                     ║
+║                                                                                                              v1.5   ║
 ╠═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╣
 ║                                                                                                                     ║
 ║                                                                                                                     ║
@@ -403,7 +404,7 @@ namespace corridaSO{
                 Thread.Sleep(60);
             }
             Console.Clear();
-            // Console.WriteLine(city0);
+            Console.WriteLine(city0);
             if(bet == Position.Winner){
                 Console.WriteLine(@"║                               __     ______  _    _     __          _______ _   _                                   ║
 ║                               \ \   / / __ \| |  | |    \ \        / /_   _| \ | |                                  ║
@@ -488,7 +489,7 @@ namespace corridaSO{
                     Console.WriteLine(winner5);
                     break;
             }
-            // Console.WriteLine("╚═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╝");
+            Console.WriteLine("╚═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╝");
             Console.ReadKey();
         }
     }
